@@ -1,18 +1,14 @@
     package com.thinkon.api.controller;
 
     import com.fasterxml.jackson.databind.ObjectMapper;
-    import com.thinkon.api.domain.UserRepository;
     import com.thinkon.api.dto.DataCreateUser;
-    import com.thinkon.api.domain.model.User;
     import com.thinkon.api.dto.DataUpdateUser;
-    import com.thinkon.api.service.UserService;
     import org.junit.jupiter.api.DisplayName;
     import org.junit.jupiter.api.Test;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
     import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
     import org.springframework.boot.test.context.SpringBootTest;
-    import org.springframework.boot.test.json.JacksonTester;
     import org.springframework.http.HttpStatus;
     import org.springframework.http.MediaType;
     import org.springframework.mock.web.MockHttpServletResponse;
@@ -34,18 +30,6 @@
 
         @Autowired
         private MockMvc mvc;
-
-        @Autowired
-        private JacksonTester<User> userJackson;
-
-        @Autowired
-        private JacksonTester<UserService> userServiceJacksonTester;
-
-        @Autowired JacksonTester<UserController> userControllerJacksonJackson;
-        @Autowired
-        private UserService userService;
-        @Autowired
-        private UserRepository userRepository;
 
         @Test
         @DisplayName("Create User data, and response is CREATED Https status")
